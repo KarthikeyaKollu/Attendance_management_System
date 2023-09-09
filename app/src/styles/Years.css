@@ -1,0 +1,13 @@
+#lottie-ECE{
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    z-index: -1;
+}
+#lottie-2{
+
+    position: fixed;
+    bottom: 0px;
+    right:0px;
+    z-index: -1;
+}

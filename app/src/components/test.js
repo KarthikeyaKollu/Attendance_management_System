@@ -1,20 +1,20 @@
-// import { doc, getDoc, addDoc, collection ,setDoc } from 'firebase/firestore';
-// import { db } from '../firebase';
+import { doc, getDoc, addDoc, collection ,setDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 
-// const addStudent = async (year, section, studentData, studentId) => {
-//   try {
-//     // Create a reference to the specific student document using the studentId as the document ID
-//     const studentRef = doc(db, `ECE/${year}/${section}/${studentId}`);
+export const addStudent = async (year, section, studentData, studentId) => {
+  try {
+    // Create a reference to the specific student document using the studentId as the document ID
+    const studentRef = doc(db, `ECE/${year}/${section}/${studentId}`);
 
-//     // Add the student data to the document
-//     await setDoc(studentRef, studentData);
+    // Add the student data to the document
+    await setDoc(studentRef, studentData);
 
-//     console.log(`Student with ID ${studentId} added.`);
-//   } catch (error) {
-//     console.error(`Error adding student with ID ${studentId}:`, error);
-//   }
-// };
+    console.log(`Student with ID ${studentId} added.`);
+  } catch (error) {
+    console.error(`Error adding student with ID ${studentId}:`, error);
+  }
+};
 
 // // Example usage: Add students with IDs from 1 to 10
 // const year = "4th-YEAR";

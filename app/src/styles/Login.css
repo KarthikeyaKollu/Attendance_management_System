@@ -1,0 +1,132 @@
+/* LoginForm.css */
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-image: url(../images/img.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+     /* Adjust the blur radius as per your preference */
+}
+.wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+   /* Adjust the blur radius as per your preference */
+}
+#lottie-1{
+    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+#alert{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    #button{
+        width: 30px;
+        height: 40px;
+        background-color: transparent;
+        color: black;
+        font-size: 20px;
+      
+      
+        
+    }
+}
+
+
+.container {
+    position: relative;
+    height: 500px;
+    color: black;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    #h1{
+        position: absolute;
+        top: 10px;
+        right: 150px;
+        color: white;
+        border-bottom: 2px solid;
+        
+    }
+   
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+   
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  

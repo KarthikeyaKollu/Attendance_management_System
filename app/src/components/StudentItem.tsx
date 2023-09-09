@@ -272,6 +272,7 @@ const StudentItem = ({ studentName,studentId,date , section}:Props) => {
     }
       
         const sum = arr.reduce((total, value) => total + value, 0);
+        
         const percentage = (sum / arr.length) * 100;
       
         return Math.round(percentage);

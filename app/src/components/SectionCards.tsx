@@ -39,7 +39,7 @@ const SectionCards = () => {
               key={index}
               className="card"
               variants={cardVariant}
-              transition={{ delay: index * 0.3 }}
+              transition={{ delay: index * 1.5 }}
             >
               <Card path={""} key={index}  /> {/* Add a unique key prop for each Card instance */}
             </motion.li>

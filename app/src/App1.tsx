@@ -1,11 +1,11 @@
 import React from 'react'
-import FacultyList from './components/FacultyList'
+import Faculty_StudentList from './components/Faculty_StudentList'
 
 const App1 = () => {
   return (
     <div>
 
-        <FacultyList/>
+        
     </div>
   )
 }

@@ -20,7 +20,7 @@ import { useLocation } from 'react-router-dom';
 
 
 export interface Student {
-  id: number;
+  id: string;
   name: string;
   attendance: number[]; // Array of 8 values (0 for absent, 1 for present)
   
@@ -64,6 +64,7 @@ const initialStudents: Student[] = [
 
        setStudents(fetchedStudentsData);
       
+      
         
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -77,7 +78,7 @@ const initialStudents: Student[] = [
   const [selectedDate, setSelectedDate] = useState('');
    
   const data = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-  useEffect(()=>{handleDateChange("07/11/2023")})
+  useEffect(()=>{handleDateChange("01/7/2023")})
   const handleDateChange = (date:any) => {
     setSelectedDate(date);
     console.log()

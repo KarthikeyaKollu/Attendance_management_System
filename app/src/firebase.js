@@ -3,16 +3,19 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getFirestore} from '@firebase/firestore';
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBXaSI8PEPnwp2YpggC6m7lVK6OcBhaa-c",
-  authDomain: "fir-a210f.firebaseapp.com",
-  projectId: "fir-a210f",
-  storageBucket: "fir-a210f.appspot.com",
-  messagingSenderId: "572835236381",
-  appId: "1:572835236381:web:3c73a9ae4c56c9167554f4",
-  measurementId: "G-X4Q2CY62R7"
+  apiKey: "AIzaSyAy_g-SXp1nfTTB6NMbqNPoXDYLPhYOLfM",
+  authDomain: "fir-app-a12bf.firebaseapp.com",
+  projectId: "fir-app-a12bf",
+  storageBucket: "fir-app-a12bf.appspot.com",
+  messagingSenderId: "711777148180",
+  appId: "1:711777148180:web:97fedc036d7c2fc7983601",
+  measurementId: "G-3LM5J01JH8"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 export const db=getFirestore(app);

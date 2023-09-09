@@ -9,14 +9,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    margin-top: 50px;
+    
    
  
 }
-.container{
+.container1{
     background: var(--container-color);
     width: 900px;
-    height: 450px;
+    height: 400px;
     border-radius: 20px;
     box-shadow: 3px 3px 3px rgb(0, 0, 0);
     overflow: hidden;
@@ -36,14 +37,14 @@
         
         .bar{
             background: var(--bar-color);
-            height:300px;
+            height:250px;
             margin-top: 30px;
             border-radius: 20px;
             box-shadow: 3px 3px 3px rgb(107, 107, 107);
         }
         .circle{
             background: var(--circle-color);
-            height: 300px;
+            height: 250px;
             margin-top: 30px;
             border-radius: 20px;
             width: 300px;
@@ -65,6 +66,7 @@
    #btn2{
     position: absolute;
        right: 0px;
+       width: 70px;
        transition: transform 0.3s ease; 
        &:active {
        transform: scale(0.5); 
@@ -72,6 +74,7 @@
    }
    #btn1{
       position: absolute;
+      width: 150px;
       transition: transform 0.3s ease; 
       &:active {
       transform: scale(0.5); 

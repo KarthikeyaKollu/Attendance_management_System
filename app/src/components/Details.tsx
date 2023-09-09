@@ -71,8 +71,8 @@ const Details = ({onClose ,defaultPercentage ,labels ,bars,studentName ,isGet}:P
 
   return (
     <>
-     <div className="container"> 
-     <div className="container-1">
+     <div className="container-detail"> 
+     <div className="container-1-detail">
         <div className="details">
         <div className="circles">
              <div className="circle-1">
@@ -96,7 +96,7 @@ const Details = ({onClose ,defaultPercentage ,labels ,bars,studentName ,isGet}:P
         <div className="extra-1">
           <h3>Message To Student</h3>
           <div id="message">
-          <textarea name="text" id="mail" cols={40 }rows={4}></textarea>
+          <textarea name="text" id="mail" cols={250 }rows={4}></textarea>
           <button className="btn btn-primary btn-sm mx-3" id='mail-btn'>Send</button>
           </div>
          
@@ -130,7 +130,7 @@ const Details = ({onClose ,defaultPercentage ,labels ,bars,studentName ,isGet}:P
        
         </div>
         
-     <div className="container-2">
+     <div className="container-2-detail">
      <div id='btn-div' ><span><button id='btn' type="button" className="btn btn-danger btn-circle rounded-circle btn-xl" onClick={(e)=>handlePopupClose()}> &times;</button></span></div>
 
         <div className="progress-pie">

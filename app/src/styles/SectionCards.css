@@ -3,6 +3,7 @@
     height: 100vh;
     margin-top: 100px;
     justify-content: center;
+    background-color: transparent;
    
 }
 .box{
@@ -12,10 +13,16 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    background-color: transparent;
 }
 .card{
-    background-color: black;
+    background-color: transparent;
     width: 1000px;
     height: 1050px;
+}
+#lottie-Holo{
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    z-index: -1;
 }

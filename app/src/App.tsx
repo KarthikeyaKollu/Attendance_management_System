@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Wrapper from './components/Wrapper';
 import Card from './components/Card';
-import Framer from './components/Framer';
+
 import Details from './components/Details';
 import './styles/App.css';
 import Header from './components/Header';
@@ -12,8 +12,17 @@ import Sections from './components/Sections';
 import { fetchYearsSectionsAndBranches} from './components/setFaculty.js'
 import { db } from './firebase';
 import { doc } from 'firebase/firestore';
+import Faculty_StudentList from './components/Faculty_StudentList';
+import ExcelDataFetcher from './components/ExcelDataFetcher';
+import Admin_ViewList from './components/Admin/Admin_ViewList';
+import Manage_faculty from './components/Admin/Manage_faculty';
+import LoginForm from './components/LoginForm';
 
-interface MyObjectInterface {
+
+
+export  const facultyId ="IPR";
+
+export interface MyObjectInterface {
   [key: number]: string[];
 }
 
@@ -30,14 +39,16 @@ const App = () => {
  const [years, setyears] = useState<string[]>([]);
 
  const [section, setsection] = useState<MyObjectInterface >([]);
+ const  [branches, setbranches] = useState<any>([])
 
 
 
 const getData =async()=>{
-  const dataRef = doc(db,"faculty/IPR");
+  const dataRef = doc(db,`faculty/${facultyId}`);
     const data = await fetchYearsSectionsAndBranches(dataRef);
       const branches = Object.keys(data);
       //console.log(branches);
+      setbranches(branches);
 
       const branch = "ECE";
       const yearsObj = data[branch];
@@ -52,19 +63,29 @@ const getData =async()=>{
 
 
   }
-  useEffect(()=>{ getData();},[])
+   useEffect(()=>{ getData();},[])
 
 
   
 
 
-  return (<div>
- 
-   
+  return (<div> 
+
 
 
 <Router>
+
         <Routes>
+        <Route path="/Login" element={<LoginForm />}/>
+          <Route path="/admin" element={<Admin_ViewList />}/>
+          <Route path="/addstudents" element={<ExcelDataFetcher />}/>
+          <Route path='/mydata' element={<Faculty_StudentList yearsList={years} branchesList={branches} sectionsList={section}/>}></Route>
+          <Route path="/manageFaculty"  element={<Manage_faculty />}/>
+
+         
+          
+          
+          
           <Route path="/" element={<Years  years={years}  />} />
           // {/* <Route path="/1" element={<Sections/>}></Route> */}
 

@@ -1,44 +1,26 @@
 import { db } from '../firebase';
 import { doc, getDoc, addDoc, collection ,setDoc } from 'firebase/firestore';
+import { facultyId } from '../App';
 
 
 
-
-      
+   
       export const addStudentAttendance = async (studentId, day, section, attendanceStatus) => {
         try {
           const formattedDay = day.replaceAll('/', '-');
-          const attendanceRef = doc(db, `faculty/IPR${section}/attendance/${studentId}/${formattedDay}`);
-      
+          const attendanceRef = doc(db, `faculty/${facultyId}/${section}/attendance/${studentId}/${formattedDay}`);
+          
           const docSnapshot = await getDoc(attendanceRef);
           const currentData = docSnapshot.data();
-          console.log(docSnapshot.exists());
+         
         
-          if (!docSnapshot.exists()) {
+         
              
             await setDoc(attendanceRef, {
-              status: [attendanceStatus],
+              status: attendanceStatus,
             });
-          }
+          
 
-
-          if (Object.entries(currentData).length==0){
-            await setDoc(attendanceRef, {
-              status: [attendanceStatus],
-            });
-         }
-         
-         
-         else if (true) {
-          // If the document exists and "status" is an array, update the array
-          const updatedStatusArray = [...currentData.status,attendanceStatus];
-          console.log("updatesa aray", updatedStatusArray)
-    
-          await setDoc(attendanceRef, {
-            status: updatedStatusArray,
-          });
-         } 
-      
           console.log(`Attendance data added for student ${studentId} on day ${day}.`);
         } catch (error) {
           console.error(`Error adding attendance for student ${studentId} on day ${day}:`, error);
@@ -47,20 +29,25 @@ import { doc, getDoc, addDoc, collection ,setDoc } from 'firebase/firestore';
 
 
 
-   export   const fetchAttandanceReport=async(date)=>{
+   export  const fetchAttandanceReport = async(date,id ,path )=>{
          const formattedDay = date.replaceAll('/', '-');
+        //  console.log("called fetchattandance report");
          
         try{
-          const attendanceRef = doc(db, `faculty/IPR/ECE/1st-YEAR/section-A/attendance/1/${date}`);
+          
+        const attendanceRef = doc(db, `faculty/${facultyId}/${path}/attendance/${id}/${date}`);
+       // console.log(attendanceRef)
+       // console.log(`${id}/${date}`)
         const docSnapshot = await getDoc(attendanceRef);
-        const currentData = docSnapshot.data();
+        const currentData =await docSnapshot.data();
         const {status}=currentData;
+       // console.log(status)
        
         return status;
         }
         catch(error){
           //console.log("data not found");
-          return "NoDate";
+          return "NoData";
         }
  
       }
@@ -71,7 +58,7 @@ import { doc, getDoc, addDoc, collection ,setDoc } from 'firebase/firestore';
 
           
 export const fetchData= async()=>{   // used to fetch the branch and data of the faculty
-  const dataRef = doc(db, `faculty/IPR`);
+  const dataRef = doc(db, `faculty/${facultyId}`);
   const data =(await getDoc(dataRef)).data();
 //   console.log(data)
   const {years ,branches ,id, name ,sections} = "";
@@ -136,20 +123,19 @@ export async function fetchYearsSectionsAndBranches(dataRef) {
       {
         branch: "ECE",
         years: [
-          { year: 1, sections: ["A","B","C", "D"] },
-          
+         
+          { year: 4, sections: ["D"] },
           
 
         ],
       },
-      // {
-      //   branch: "CSE",
-      //   years: [
-      //     { year: 1, sections: ["A"] },
-      //     { year: 2, sections: ["B","C"] },
-      //     { year: 3, sections: ["D"] },
-      //   ],
-      // },
+      {
+        branch: "CSE",
+        years: [
+        
+          { year: 3, sections: ["D"] },
+        ],
+      },
     ];
 
 
@@ -157,7 +143,7 @@ export async function fetchYearsSectionsAndBranches(dataRef) {
     
 // async function setNewDocument() {
 //       // Reference to the document you want to create or overwrite
-//       const dataRef = doc(db,"faculty/MEENA");
+//       const dataRef = doc(db,"faculty/IPR");
 
 //       // Use setDoc to create or overwrite the document with the new data
 //       await setDoc(dataRef, { branches: branchesData })
