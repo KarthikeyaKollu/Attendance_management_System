@@ -1,0 +1,21 @@
+.card-container{
+    display: flex;
+    height: 100vh;
+    margin-top: 100px;
+    justify-content: center;
+   
+}
+.box{
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+}
+.card{
+    background-color: black;
+    width: 1000px;
+    height: 1050px;
+}

@@ -1,0 +1,75 @@
+
+    // export  const addStudentAttendance = async (studentId, day ,section, morningStatus, afternoonStatus) => {
+    //     try {
+    //       const formattedDay = day.replaceAll('/', '-');
+    //       const attendanceRef = doc(db, `faculty/RE011${section}/attendance/${studentId}/${formattedDay}`);
+    //           const docSnapshot = await attendanceRef.get();
+    //          const currentData = docSnapshot.data();
+
+    //      // const attendanceRef = doc(db, `faculty`);
+
+    //       // await setDoc(dataRef, {
+    //       //    name: "Rajesh",
+    //       //     id:"RE011",
+    //       //   //  branches:["ECE","CSE","MECH"],
+    //       //   //     sections:["A","B","C"],
+    //       //   //     years:[1,2,3],
+
+    //       //   });
+        
+          
+    //       await setDoc(attendanceRef, {
+    //           status: [morningStatus, afternoonStatus],
+    //         });
+        
+    //       // console.log(`Attendance data added for student ${studentId} on day ${day}.`);
+    //     } catch (error) {
+    //       // console.error(`Error adding attendance for student ${studentId} on day ${day}:`, error);
+    //     }
+    //   };
+
+      // // Example usage: Add student attendance data
+      // addStudentAttendance("student1", "day1",0, 0);
+      // addStudentAttendance("student1", "day2", 1, 1);
+      // addStudentAttendance("student10", "day1", 1, 1);
+      // // Add more student attendance data as needed
+   
+
+
+         const branchesData = [
+            {
+              branch: "ECE",
+              years: [
+                { year: 1, sections: ["A","B","C", "D"] },
+                { year: 2, sections: ["A","B","C", "D"] },
+                { year: 3, sections: ["A","B","C", "D"] },
+                
+  
+              ],
+            },
+            // {
+            //   branch: "CSE",
+            //   years: [
+            //     { year: 1, sections: ["A"] },
+            //     { year: 2, sections: ["B","C"] },
+            //     { year: 3, sections: ["D"] },
+            //   ],
+            // },
+          ];
+
+
+
+          
+// async function setNewDocument() {
+//       // Reference to the document you want to create or overwrite
+//       const dataRef = doc(db,"faculty/IPR");
+    
+//       // Use setDoc to create or overwrite the document with the new data
+//       await setDoc(dataRef, { branches: branchesData })
+//         .catch((error) => {
+//           console.error("Error writing document: ", error);
+//         });
+//     }
+    
+//     // Call the function to set the new document
+//     setNewDocument();

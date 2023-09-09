@@ -1,0 +1,94 @@
+:root{
+--container-color:#ece9f2;
+--bar-color: rgb(255, 255, 255);
+--circle-color: rgb(255, 255, 255);
+
+}
+.body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+   
+ 
+}
+.container{
+    background: var(--container-color);
+    width: 900px;
+    height: 450px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    overflow: hidden;
+ 
+    
+    #h2{
+        text-align: center;
+        margin-top: 10px;
+        color: black;
+
+    }
+    .bar-circle{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        
+        .bar{
+            background: var(--bar-color);
+            height:300px;
+            margin-top: 30px;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px rgb(107, 107, 107);
+        }
+        .circle{
+            background: var(--circle-color);
+            height: 300px;
+            margin-top: 30px;
+            border-radius: 20px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 3px rgb(107, 107, 107);
+
+        }
+    }
+  
+  
+    
+} 
+.buttons{
+   margin: 15px;
+   position: relative;
+  
+   #btn2{
+    position: absolute;
+       right: 0px;
+       transition: transform 0.3s ease; 
+       &:active {
+       transform: scale(0.5); 
+     }
+   }
+   #btn1{
+      position: absolute;
+      transition: transform 0.3s ease; 
+      &:active {
+      transform: scale(0.5); 
+    }
+   }
+   
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px); /* Add the backdrop blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
